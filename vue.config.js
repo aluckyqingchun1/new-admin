@@ -6,7 +6,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = defaultSettings.title || 'vue Element Admin' // page title
+const name = defaultSettings.title || '小沈老师' // page title
 
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
@@ -32,6 +32,12 @@ module.exports = {
   devServer: {
     port: port,
     open: true,
+    proxy: {
+      '/login': {
+        target: `http://127.0.0.1:7001`,
+        changeOrigin: true
+      }
+    },
     overlay: {
       warnings: false,
       errors: true

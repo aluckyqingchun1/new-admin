@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-element-admin/user/login',
+    url: '/login/index',
     method: 'post',
     data
   })
@@ -20,5 +20,12 @@ export function logout() {
   return request({
     url: '/vue-element-admin/user/logout',
     method: 'post'
+  })
+}
+
+export function check() {
+  return request({
+    url: '/login/captcha',
+    method: 'get'
   })
 }
